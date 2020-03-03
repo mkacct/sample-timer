@@ -116,6 +116,7 @@ function startStop(which) {
 	$('#startStopButton').html(running ? '<i class="fas fa-stop"></i>' : '<i class="fas fa-play"></i>');
 	$('#timeInput, #unitButton').attr('disabled', running);
 	$('#details').css('color', running ? 'inherit' : 'gray');
+	$('#visual').removeClass();
 	if (running) {
 		let unit = $('#unitButton').text();
 		switch (unit) {
@@ -129,6 +130,7 @@ function startStop(which) {
 		clickCount = 0;
 		$('#detailClicks').text('0');
 		$('#detailTime').text('00:00.000');
+		$('#visual').addClass('visual-left');
 		startTime = moment();
 		mnTimeout = setTimeout(updateTimer, 1);
 	} else {
@@ -145,6 +147,7 @@ function updateTimer() {
 		$('audio')[0].play();
 		clickCount = tempClickCount;
 		$('#detailClicks').text(clickCount);
+		$('#visual').removeClass().addClass(clickCount % 2 == 0 ? 'visual-left' : 'visual-right');
 	}
 	$('#detailTime').text(formatDuration(runningTime));
 	mnTimeout = setTimeout(updateTimer, 1);

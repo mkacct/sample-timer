@@ -45,6 +45,15 @@ noscript {margin: 1em;}
 body.hasHover #startStopButton:not([disabled]):hover, #startStopButton:focus {background-color: #65bc69;}
 body:not(.cheat) #startStopButton:not([disabled]):active {background-color: #80c883;}
 
+#visual {
+	height: 1em;
+	display: none;
+}
+
+#visual.visual-left, #visual.visual-right {background-color: white;}
+#visual.visual-left {margin-right: 50%;}
+#visual.visual-right {margin-left: 50%;}
+
 audio {display: none;}
 
 @media only screen and (max-width: 480px) {
@@ -75,6 +84,8 @@ audio {display: none;}
 	#timeInput {margin-top: 0;}
 	
 	#details {margin: 16px 0;}
+	
+	#visual {display: block;}
 	
 	#startStopButton {
 		border-radius: 0;
