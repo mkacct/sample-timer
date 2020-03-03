@@ -33,6 +33,7 @@ noscript {margin: 1em;}
 
 #startStopButton {
 	padding: 1em;
+	font-size: 1.2em;
 	border: 1px solid transparent;
 	background-color: #4caf50;
 	color: white;
