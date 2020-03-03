@@ -131,6 +131,7 @@ function startStop(which) {
 		$('#detailClicks').text('0');
 		$('#detailTime').text('00:00.000');
 		$('#visual').addClass('visual-left');
+		window.getSelection().removeAllRanges();
 		startTime = moment();
 		mnTimeout = setTimeout(updateTimer, 1);
 	} else {
