@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="robots" content="nosnippet">
+		<title>Sample Timer</title>
+		<!-- favicons -->
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<!-- pwa/mobile -->
+		<link rel="manifest" href="/manifest.webmanifest">
+		<meta name="theme-color" content="#4caf50">
+		<!-- apple -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Sample Timer">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4caf50">
+		<!-- microsoft -->
+		<meta name="msapplication-TileColor" content="#00a300">
+		<!-- style -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+		<link href="/res/fontAwesome/css/fontawesome.css" rel="stylesheet">
+		<link href="/res/fontAwesome/css/solid.css" rel="stylesheet">
+		<link href="/css/global.css" rel="stylesheet">
+		<link href="/css/index.css" rel="stylesheet">
+		<!-- script -->
+		<script src="/pwabuilder-sw-register.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+		<script src="/config.js"></script>
+		<script src="/js/watchForHover.js"></script>
+		<script src="/js/global.js"></script>
+		<script src="/js/index.js"></script>
+	</head>
+	<body>
+		<header>
+			<div><img src="res/logo.png" id="logo" alt="App logo icon"></div>
+			<div style="flex-grow: 1;"></div>
+			<div style="display: none;"><button class="roundButton" id="installButton" aria-label="Install web app"><i class="fas fa-arrow-alt-circle-down"></i></button></div>
+			<div><button id="menuButton" class="roundButton" aria-label="Menu" disabled><i class="fas fa-ellipsis-h"></i></button></div>
+		</header>
+		<main>
+			<noscript><div style="text-align: center;">Please enable JavaScript and reload</div></noscript>
+			<div id="notBottomContainer" class="hideWithoutJs">
+				<div id="notBottom">
+					<input id="timeInput" type="text" value="1" autocomplete="off" spellcheck="false" inputmode="decimal">
+					<button id="unitButton" aria-label="Change unit">s/click</button>
+					<p id="details" style="color: gray;">
+						Clicks: <span id="detailClicks">0</span><br/>
+						<span id="detailTime">00:00.000</span>
+					</p>
+				</div>
+			</div>
+			<button id="startStopButton" aria-label="Start/stop" class="hideWithoutJs"><i class="fas fa-play"></i></button>
+		</main>
+		<audio src="res/click.wav" preload="auto"></audio>
+		<div id="modalShade"></div>
+		<div class="modal" id="menuModal">
+			<div class="modalContent">
+				<div class="modalNav">
+					<button class="modalClose roundButton" aria-label="Close"><i class="fas fa-times"></i></button>
+				</div>
+				<div class="menuCategory">
+					<h3>Links</h3>
+					<ul>
+						<li><a href="https://github.com/savaka2/sample-timer" target="_blank" rel="noopener noreferrer">GitHub repo</a></li>
+						<li><a href="https://github.com/savaka2/sample-timer/issues" target="_blank" rel="noopener noreferrer">GitHub issues</a></li>
+					</ul>
+				</div>
+				<div class="centeredDot" style="margin-top: 1em;"></div>
+				<img src="res/cred.png" id="cred" style="display: block; margin: 1em auto; width: 2em;" alt="Credit icon">
+				<p style="text-align: center; margin: 0;">Created by Sam K.</p>
+			</div>
+		</div>
+		<div class="modal" id="installModal">
+			<div class="modalContent">
+				<div class="modalNav">
+					<button class="modalClose roundButton" aria-label="Close"><i class="fas fa-times"></i></button>
+				</div>
+				<h3>Install web app</h3>
+				<p>You can add this site to your device as an app.</p>
+				<button id="installConfirmButton" style="margin-bottom: 1em;">Install</button>
+			</div>
+		</div>
+		<!-- <div class="modal" id="closeAppModal">
+			<div class="modalContent">
+				<h3>Close app?</h3>
+				<div class="buttonRow" style="text-align: right;"><button class="modalClose">Cancel</button><button id="closeAppButton">Close</button></div>
+			</div>
+		</div> -->
+	</body>
+</html>

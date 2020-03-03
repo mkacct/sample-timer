@@ -1,0 +1,81 @@
+#details, noscript {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+noscript {margin: 1em;}
+
+#timeInput {
+	display: block;
+	font-size: 2em;
+	text-align: center;
+	margin: 16px 0;
+	width: 100%;
+}
+
+#timeInput[disabled] {color: gray;}
+
+#unitButton, #startStopButton {
+	display: block;
+	margin: 16px 0;
+	width: 100%;
+}
+
+.hideWithoutJs {display: none !important;}
+
+#details {
+	text-align: center;
+	font-size: 1.2em;
+	margin: 16px;
+}
+
+#startStopButton {
+	padding: 1em;
+	border: 1px solid transparent;
+	background-color: #4caf50;
+	color: white;
+}
+
+#startStopButton i {margin: 0;}
+body.hasHover #startStopButton:not([disabled]):hover, #startStopButton:focus {background-color: #65bc69;}
+body:not(.cheat) #startStopButton:not([disabled]):active {background-color: #80c883;}
+
+audio {display: none;}
+
+@media only screen and (max-width: 480px) {
+	html {overscroll-behavior: none;}
+	
+	body {
+		overscroll-behavior: none;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	main {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#notBottomContainer {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	#notBottom {margin: 0 1em;}
+	
+	#timeInput {margin-top: 0;}
+	
+	#details {margin: 16px 0;}
+	
+	#startStopButton {
+		border-radius: 0;
+		margin: 0;
+		width: 100%;
+	}
+}
