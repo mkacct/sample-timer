@@ -49,7 +49,6 @@ body:not(.cheat) #startStopButton:not([disabled]):active {background-color: #80c
 	height: 1em;
 	display: none;
 }
-
 #visual.visual-left, #visual.visual-right {background-color: white;}
 #visual.visual-left {margin-right: 50%;}
 #visual.visual-right {margin-left: 50%;}
@@ -92,4 +91,8 @@ audio {display: none;}
 		margin: 0;
 		width: 100%;
 	}
+}
+
+@media only screen and (prefers-color-scheme: light) {
+	#visual.visual-left, #visual.visual-right {background-color: #383838;}
 }
