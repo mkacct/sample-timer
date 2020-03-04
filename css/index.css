@@ -49,6 +49,7 @@ body:not(.cheat) #startStopButton:not([disabled]):active {background-color: #80c
 	height: 1em;
 	display: none;
 }
+
 #visual.visual-left, #visual.visual-right {background-color: white;}
 #visual.visual-left {margin-right: 50%;}
 #visual.visual-right {margin-left: 50%;}
