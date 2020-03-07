@@ -1,5 +1,6 @@
 {
 	"name": "Sample Timer",
+	"short_name": "Sample Timer",
 	"description": "Metronome for science experiments",
 	"dir": "ltr",
 	"lang": "en-US",
