@@ -1,8 +1,5 @@
 'use strict';
 
-// begin pwa install stuff
-
-let installPrompt = null;
 let timeInput = '1'; // input from text field
 let running = false; // whether or not it is running
 let interval; // the interval in ms
@@ -10,6 +7,10 @@ let startTime; // moment from when it was started
 let clickCount; // how many clicks have happened
 let runningTime; // moment that keeps getting updated
 let mnTimeout; // timeout id
+
+// begin pwa install stuff
+
+let installPrompt = null;
 
 window.addEventListener('beforeinstallprompt', function(e) {
 	installPrompt = e;
