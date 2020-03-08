@@ -1,5 +1,7 @@
 'use strict';
 
+const noise = new Audio('res/click.wav');
+
 let timeInput = '1'; // input from text field
 let running = false; // whether or not it is running
 let interval; // the interval in ms
@@ -136,7 +138,7 @@ function startStop(which) {
 		startTime = moment();
 		mnTimeout = setTimeout(updateTimer, 1);
 	} else {
-		$('audio')[0].pause();
+		noise.pause();
 	}
 }
 
@@ -145,8 +147,9 @@ function updateTimer() {
 	runningTime = moment.duration(ms);
 	let tempClickCount = Math.floor(ms / interval);
 	if (tempClickCount > clickCount) {
-		$('audio')[0].currentTime = 0;
-		$('audio')[0].play();
+		noise.pause();
+		noise.currentTime = 0;
+		noise.play();
 		clickCount = tempClickCount;
 		$('#detailClicks').text(clickCount);
 		$('#visual').removeClass().addClass(clickCount % 2 == 0 ? 'visual-left' : 'visual-right');
